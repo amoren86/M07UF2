@@ -2,24 +2,23 @@ package cat.institutmarianao;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class LoginController {
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@GetMapping(value = "/login")
 	public String login() {
 		return "login";
 	}
 
-	@RequestMapping(value = "/loginfailed", method = RequestMethod.GET)
+	@GetMapping(value = "/loginfailed")
 	public String loginerror(Model model) {
 		model.addAttribute("error", "true");
 		return "login";
 	}
 
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	@GetMapping(value = "/logout")
 	public String logout(Model model) {
 		return "login";
 	}

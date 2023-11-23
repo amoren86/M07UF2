@@ -71,25 +71,22 @@ public class InMemoryMedicineRepository implements MedicineRepository {
 
 	@Override
 	public Set<Medicine> getMedicinesByFilter(Map<String, List<String>> filterParams) {
-		Set<Medicine> medicinesByProducer = new HashSet<Medicine>();
-		Set<Medicine> medicinesInStockRange = new HashSet<Medicine>();
+		Set<Medicine> medicinesByProducer = new HashSet<>();
+		Set<Medicine> medicinesInStockRange = new HashSet<>();
+
 		Set<String> criterias = filterParams.keySet();
-		long minStock = 0;
-		long maxStock = 0;
-		if (criterias.contains("producer")) {
-			for (String producerName : filterParams.get("producer")) {
-				for (Medicine medicine : listOfMedicines) {
+
+		for (Medicine medicine : listOfMedicines) {
+			if (criterias.contains("producer")) {
+				for (String producerName : filterParams.get("producer")) {
 					if (producerName.equalsIgnoreCase(medicine.getProducer())) {
 						medicinesByProducer.add(medicine);
 					}
 				}
 			}
-		}
-		if (criterias.contains("stock")) {
-			minStock = Long.parseLong(filterParams.get("stock").get(0));
-			maxStock = Long.parseLong(filterParams.get("stock").get(1));
-
-			for (Medicine medicine : listOfMedicines) {
+			if (criterias.contains("stock")) {
+				long minStock = Long.parseLong(filterParams.get("stock").get(0));
+				long maxStock = Long.parseLong(filterParams.get("stock").get(1));
 				if ((medicine.getStockQuantity() >= minStock) && (medicine.getStockQuantity() <= maxStock)) {
 					medicinesInStockRange.add(medicine);
 				}
@@ -101,7 +98,7 @@ public class InMemoryMedicineRepository implements MedicineRepository {
 
 	@Override
 	public void update(Medicine medicineById) {
-		// Como está en memoria, no hacemos nada
+		// Do nothing, because its in memory
 	}
 
 	@Override
