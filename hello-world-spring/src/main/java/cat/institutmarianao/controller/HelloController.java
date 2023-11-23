@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/")
-public class HolaController {
+public class HelloController {
 
 	@GetMapping
 	public ModelAndView handleRequest() {
