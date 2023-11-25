@@ -6,7 +6,7 @@
 		<th>url</th>
 	</tr>
 	<tr>
-		<td>Deployment Descriptor</td><td>5.0</td><td>https://jakarta.ee/specifications/servlet/5.0/</td>
+		<td>Deployment Descriptor</td><td>6.0</td><td>https://jakarta.ee/specifications/servlet/6.0/</td>
 	</tr>
 	<tr>
 		<td>Jakarta Web API</td><td>10.0.0</td><td>https://jakarta.ee/specifications/webprofile/10/</td>
