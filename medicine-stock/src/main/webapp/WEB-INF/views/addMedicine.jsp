@@ -1,121 +1,113 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/
-css/bootstrap.min.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+	rel="stylesheet">
 <title>Medicines</title>
 </head>
 <body>
-	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<h1>Medicine</h1>
-				<p>Add medicine</p>
-				<a href="<spring:url value="/logout"/>"
-					class="btn btndanger btn-mini pull-right">logout</a>
-				<div class="pull−right" style="padding−right: 50px">
-					<a href="?language=ca">Català</a>
-					<a href="?language=en">English</a>
-				</div>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+	<div class="container">
+		<header
+			class="d-flex justify-content-between mt-4 p-5 bg-light bg-gradient rounded">
+			<div>
+				<h1>Medicines</h1>
+				<p>List of medicines in stock</p>
 			</div>
-		</div>
-	</section>
-	<section class="container">
-		<form:form modelAttribute="newMedicine" class="form-horizontal">
-			<fieldset>
-				<legend>Add medicine</legend>
-				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="medicineId">
-						<spring:message code="addMedicament.form.medicamentId.label" />
+			<div class="p-4">
+				<a href="?language=ca">Català</a>
+				<a href="?language=en">English</a>
+				<a href="<spring:url value="/logout"/>"
+					class="btn btn-secondary btn-mini">logout</a>
+			</div>
+		</header>
+		<fieldset class="p-1">
+			<legend>Add medicine</legend>
+			<form:form modelAttribute="newMedicine" class="row g-3">
+
+				<div class="col-auto">
+					<label class="form-label" for="medicineId"> <spring:message
+							code="addMedicament.form.medicamentId.label" />
 					</label>
-					<div class="col-lg-10">
-						<form:input id="medicineId" path="medicineId" type="text"
-							class="form:input-large" />
-					</div>
+					<form:input id="medicineId" path="medicineId" type="text"
+						class="form-control" />
 				</div>
-				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="name">
-						<spring:message code="addMedicament.form.name.label" />
+				<div class="col-auto">
+					<label class="form-label" for="name"> <spring:message
+							code="addMedicament.form.name.label" />
 					</label>
-					<div class="col-lg-10">
-						<form:input id="name" path="name" type="text"
-							class="form:input-large" />
-					</div>
+					<form:input id="name" path="name" type="text" class="form-control" />
 				</div>
-				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="price">
-						<spring:message code="addMedicament.form.price.label" />
+				<div class="col-auto">
+					<label class="form-label" for="price"> <spring:message
+							code="addMedicament.form.price.label" />
 					</label>
-					<div class="col-lg-10">
-						<form:input id="price" path="price" type="text"
-							class="form:input-large" />
-					</div>
+					<form:input id="price" path="price" type="text"
+						class="form-control" />
 				</div>
-				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="producer">
-						<spring:message code="addMedicament.form.producer.label" />
+				<div class="col-auto">
+					<label class="form-label" for="producer"> <spring:message
+							code="addMedicament.form.producer.label" />
 					</label>
-					<div class="col-lg-10">
-						<form:input id="producer" path="producer" type="text"
-							class="form:input-large" />
-					</div>
+					<form:input id="producer" path="producer" type="text"
+						class="form-control" />
 				</div>
-				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="category">
-						<spring:message code="addMedicament.form.category.label" />
+				<div class="col-auto">
+					<label class="form-label" for="category"> <spring:message
+							code="addMedicament.form.category.label" />
 					</label>
-					<div class="col-lg-10">
-						<form:input id="category" path="category" type="text"
-							class="form:input-large" />
-					</div>
+					<form:input id="category" path="category" type="text"
+						class="form-control" />
 				</div>
-				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="stockQuantity">Stock
+				<div class="col-auto">
+					<label class="form-label" for="stockQuantity">Stock
 						quantity</label>
-					<div class="col-lg-10">
-						<form:input id="stockQuantity" path="stockQuantity" type="text"
-							class="form:input-large" />
-					</div>
+					<form:input id="stockQuantity" path="stockQuantity" type="text"
+						class="form-control" />
 				</div>
 				<%-- 
-				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="stockInOrder">Stock
+				<div class="col-auto">
+					<label class="form-label" for="stockInOrder">Stock
 						in order</label>
-					<div class="col-lg-10">
 						<form:input id="stockInOrder" path="stockInOrder" type="text"
-							class="form:input-large" />
-					</div>
+							class="form-control" />
 				</div>
 				--%>
-				<div class="form-group">
-					<label class="control-label col-lg-2" for="description">Description</label>
-					<div class="col-lg-10">
-						<form:textarea id="description" path="description" rows="2" />
+				<div class="col-5">
+					<label class="form-label" for="description">Description</label>
+					<form:textarea id="description" path="description" rows="2"
+						class="form-control" />
+				</div>
+				<div class="col-auto">
+					<label class="form-label" for="active">Active</label>
+					<div class="form-check">
+						<form:radiobutton class="form-check-input" path="active"
+							value="true" />
+						<label class="form-check-label" for="flexRadioDefault1">
+							Yes </label>
+					</div>
+					<div class="form-check">
+						<form:radiobutton class="form-check-input" path="active"
+							value="false" />
+						<label class="form-check-label" for="flexRadioDefault1">
+							No </label>
 					</div>
 				</div>
-				<div class="form-group">
-					<label class="control-label col-lg-2" for="active">Active</label>
-					<div class="col-lg-10">
-						<form:radiobutton path="active" value="true" />
-						Yes
-						<form:radiobutton path="active" value="false" />
-						No
-					</div>
+				<div>
+					<input type="submit" id="btnAdd" class="btn btn-secondary"
+						value="Crear" />
 				</div>
-				<div class="form-group">
-					<div class="col-lg-offset-2 col-lg-10">
-						<input type="submit" id="btnAdd" class="btn btn-primary"
-							value="Crear" />
-					</div>
-				</div>
-			</fieldset>
-		</form:form>
-	</section>
+			</form:form>
+		</fieldset>
+	</div>
 </body>
 </html>

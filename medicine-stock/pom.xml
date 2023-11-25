@@ -14,10 +14,10 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
-		<spring.version>6.1.0</spring.version>
+		<spring.version>6.1.1</spring.version>
+		<spring-security>6.2.0</spring-security>
 		<jakarta.jakartaee-web-api>10.0.0</jakarta.jakartaee-web-api>
 		<jakarta.servlet.jsp.jstl>3.0.0</jakarta.servlet.jsp.jstl>
-		<spring-security>6.2.0</spring-security>
 	</properties>
 
 	<dependencies>
@@ -40,10 +40,10 @@
 			<version>${jakarta.servlet.jsp.jstl}</version>
 		</dependency>
 		<dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>${spring-security}</version>
-            <!--
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring-security}</version>
+			<!--
             <exclusions>
                 <exclusion>
                     <artifactId>spring-asm</artifactId>
@@ -51,7 +51,7 @@
                 </exclusion>
             </exclusions>
             -->
-        </dependency>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>

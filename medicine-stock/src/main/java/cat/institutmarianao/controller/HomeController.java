@@ -10,8 +10,8 @@ public class HomeController {
 	@GetMapping(value = "/")
 	public ModelAndView handleRequest() {
 		ModelAndView modelview = new ModelAndView("welcome");
-		modelview.getModelMap().addAttribute("title", "Welcome to Medicine Stock!");
-		modelview.getModelMap().addAttribute("tagline", "An application from Marianao Institute");
+		modelview.getModelMap().addAttribute("title", "Medicine Stocks");
+		modelview.getModelMap().addAttribute("tagline", "An Institut Marianao application");
 		return modelview;
 	}
 }

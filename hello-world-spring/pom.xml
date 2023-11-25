@@ -14,7 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
-		<spring.version>6.1.0</spring.version>
+		<spring.version>6.1.1</spring.version>
 		<jakarta.jakartaee-web-api>10.0.0</jakarta.jakartaee-web-api>
 		<jakarta.servlet.jsp.jstl>3.0.0</jakarta.servlet.jsp.jstl>
 	</properties>
