@@ -18,14 +18,14 @@ public class HelloController {
 
 	@GetMapping(value = "/goodmorning")
 	public ModelAndView handleRequestDia() {
-		ModelAndView modelview = new ModelAndView("resposta");
+		ModelAndView modelview = new ModelAndView("response");
 		modelview.getModelMap().addAttribute("greetings", "Good morning everyone!");
 		return modelview;
 	}
 
 	@GetMapping(value = "/goodafternoon")
 	public ModelAndView handleRequestNit() {
-		ModelAndView modelview = new ModelAndView("resposta");
+		ModelAndView modelview = new ModelAndView("response");
 		modelview.getModelMap().addAttribute("greetings", "Good afternoon everyone!");
 		return modelview;
 	}

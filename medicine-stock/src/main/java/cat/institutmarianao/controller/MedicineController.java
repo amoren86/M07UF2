@@ -1,4 +1,4 @@
-package cat.institutmarianao;
+package cat.institutmarianao.controller;
 
 import java.util.List;
 import java.util.Map;

@@ -17,7 +17,7 @@ css/bootstrap.min.css">
 			<div class="container">
 				<h1>Medicine</h1>
 				<p>Add medicine</p>
-				<a href="<c:url value="/j_spring_security_logout" />"
+				<a href="<spring:url value="/logout"/>"
 					class="btn btndanger btn-mini pull-right">logout</a>
 				<div class="pull−right" style="padding−right: 50px">
 					<a href="?language=ca">Català</a>

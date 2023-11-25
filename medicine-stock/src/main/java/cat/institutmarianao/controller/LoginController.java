@@ -1,4 +1,4 @@
-package cat.institutmarianao;
+package cat.institutmarianao.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,11 +15,6 @@ public class LoginController {
 	@GetMapping(value = "/loginfailed")
 	public String loginerror(Model model) {
 		model.addAttribute("error", "true");
-		return "login";
-	}
-
-	@GetMapping(value = "/logout")
-	public String logout(Model model) {
 		return "login";
 	}
 }

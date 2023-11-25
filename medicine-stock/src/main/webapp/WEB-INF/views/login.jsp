@@ -1,9 +1,9 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
@@ -30,17 +30,19 @@
 						<c:if test="${not empty error}">
 							<div class="alert alert-danger">Invalid credentials</div>
 						</c:if>
-						<form action="<c:url value= "/j_spring_security_check"> </c:url>"
-							method="post">
+						<form action="<c:url value= "/login"/>" method="post">
 							<fieldset>
 								<div class="form-group">
 									<input class="form-control" placeholder="Usuari"
-										name='j_username' type="text">
+										name="username" type="text">
 								</div>
 								<div class="form-group">
 									<input class="form-control" placeholder="Contrasenya"
-										name='j_password' type="password">
+										name="password" type="password">
 								</div>
+								<%--
+									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+							 	--%>
 								<input class="btn btn-lg btn-success btn-block" type="submit"
 									value="Login">
 							</fieldset>
