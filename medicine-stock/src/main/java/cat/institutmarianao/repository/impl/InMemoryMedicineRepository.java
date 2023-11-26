@@ -1,6 +1,5 @@
 package cat.institutmarianao.repository.impl;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -13,7 +12,7 @@ import cat.institutmarianao.repository.MedicineRepository;
 
 @Repository
 public class InMemoryMedicineRepository implements MedicineRepository {
-	private List<Medicine> listOfMedicines = new ArrayList<>();
+	private Set<Medicine> medicines = new HashSet<>();
 
 	public InMemoryMedicineRepository() {
 		Medicine ibuprofe = new Medicine("M010", "Ibuprofé", 2);
@@ -33,20 +32,20 @@ public class InMemoryMedicineRepository implements MedicineRepository {
 		acacetilsalicilico.setCategory("Analgèsic");
 		acacetilsalicilico.setProducer("Bayer");
 		acacetilsalicilico.setStockQuantity(15);
-		listOfMedicines.add(ibuprofe);
-		listOfMedicines.add(paracetamol);
-		listOfMedicines.add(acacetilsalicilico);
+		medicines.add(ibuprofe);
+		medicines.add(paracetamol);
+		medicines.add(acacetilsalicilico);
 	}
 
 	@Override
-	public List<Medicine> getAllMedicines() {
-		return listOfMedicines;
+	public Set<Medicine> getAllMedicines() {
+		return medicines;
 	}
 
 	@Override
 	public Medicine getMedicineById(String medicineId) {
 		Medicine medicineById = null;
-		for (Medicine medicine : listOfMedicines) {
+		for (Medicine medicine : medicines) {
 			if (medicine != null && medicine.getMedicineId() != null && medicine.getMedicineId().equals(medicineId)) {
 				medicineById = medicine;
 				break;
@@ -59,9 +58,9 @@ public class InMemoryMedicineRepository implements MedicineRepository {
 	}
 
 	@Override
-	public List<Medicine> getMedicinesByCategory(String category) {
-		List<Medicine> medicinesByCategory = new ArrayList<Medicine>();
-		for (Medicine medicine : listOfMedicines) {
+	public Set<Medicine> getMedicinesByCategory(String category) {
+		Set<Medicine> medicinesByCategory = new HashSet<>();
+		for (Medicine medicine : medicines) {
 			if (category.equalsIgnoreCase(medicine.getCategory())) {
 				medicinesByCategory.add(medicine);
 			}
@@ -76,7 +75,7 @@ public class InMemoryMedicineRepository implements MedicineRepository {
 
 		Set<String> criterias = filterParams.keySet();
 
-		for (Medicine medicine : listOfMedicines) {
+		for (Medicine medicine : medicines) {
 			if (criterias.contains("producer")) {
 				for (String producerName : filterParams.get("producer")) {
 					if (producerName.equalsIgnoreCase(medicine.getProducer())) {
@@ -103,6 +102,6 @@ public class InMemoryMedicineRepository implements MedicineRepository {
 
 	@Override
 	public void addMedicine(Medicine medicine) {
-		listOfMedicines.add(medicine);
+		medicines.add(medicine);
 	}
 }

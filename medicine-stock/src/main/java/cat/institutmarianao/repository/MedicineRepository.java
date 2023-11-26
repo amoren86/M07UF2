@@ -7,11 +7,11 @@ import java.util.Set;
 import cat.institutmarianao.domain.Medicine;
 
 public interface MedicineRepository {
-	List<Medicine> getAllMedicines();
+	Set<Medicine> getAllMedicines();
 
 	Medicine getMedicineById(String medicineId);
 
-	List<Medicine> getMedicinesByCategory(String category);
+	Set<Medicine> getMedicinesByCategory(String category);
 
 	Set<Medicine> getMedicinesByFilter(Map<String, List<String>> filterParams);
 

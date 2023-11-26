@@ -14,29 +14,30 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
-		<spring.version>6.1.1</spring.version>
 		<jakarta.jakartaee-web-api>10.0.0</jakarta.jakartaee-web-api>
 		<jakarta.servlet.jsp.jstl>3.0.0</jakarta.servlet.jsp.jstl>
+		<spring.version>6.1.1</spring.version>
 	</properties>
 
 	<dependencies>
-		<!-- Spring web MVC -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<!-- J2EE implementation -->
+		<!-- Jakarta J2EE implementation -->
 		<dependency>
 			<groupId>jakarta.platform</groupId>
 			<artifactId>jakarta.jakartaee-web-api</artifactId>
 			<version>${jakarta.jakartaee-web-api}</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- Jakarta JSTL -->
 		<dependency>
 			<groupId>org.glassfish.web</groupId>
 			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
 			<version>${jakarta.servlet.jsp.jstl}</version>
+		</dependency>
+		<!-- Spring web MVC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 	</dependencies>
 

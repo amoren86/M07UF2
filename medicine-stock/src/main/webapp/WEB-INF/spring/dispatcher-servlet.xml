@@ -15,7 +15,7 @@
 		enable-matrix-variables="true" />
 
 	<context:component-scan
-		base-package="cat.institutmarianao cat.institutmarianao.repository cat.institutmarianao.service" />
+		base-package="cat.institutmarianao.controller cat.institutmarianao.repository cat.institutmarianao.service" />
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

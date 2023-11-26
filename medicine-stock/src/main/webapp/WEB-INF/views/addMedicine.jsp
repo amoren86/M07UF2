@@ -20,8 +20,8 @@
 		<header
 			class="d-flex justify-content-between mt-4 p-5 bg-light bg-gradient rounded">
 			<div>
-				<h1>Medicines</h1>
-				<p>List of medicines in stock</p>
+				<h1>Medicine Stock</h1>
+				<p>Add new medicine</p>
 			</div>
 			<div class="p-4">
 				<a href="?language=ca">Català</a>
@@ -51,8 +51,8 @@
 					<label class="form-label" for="price"> <spring:message
 							code="addMedicament.form.price.label" />
 					</label>
-					<form:input id="price" path="price" type="text"
-						class="form-control" />
+					<form:input id="price" path="price" type="number" min="0.00"
+						max="10000.00" step="0.01" class="form-control" />
 				</div>
 				<div class="col-auto">
 					<label class="form-label" for="producer"> <spring:message
@@ -71,14 +71,14 @@
 				<div class="col-auto">
 					<label class="form-label" for="stockQuantity">Stock
 						quantity</label>
-					<form:input id="stockQuantity" path="stockQuantity" type="text"
+					<form:input id="stockQuantity" path="stockQuantity" type="number"
 						class="form-control" />
 				</div>
 				<%-- 
 				<div class="col-auto">
 					<label class="form-label" for="stockInOrder">Stock
 						in order</label>
-						<form:input id="stockInOrder" path="stockInOrder" type="text"
+						<form:input  type="number"  id="stockInOrder" path="stockInOrder" type="text"
 							class="form-control" />
 				</div>
 				--%>

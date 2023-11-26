@@ -8,59 +8,62 @@
 	<artifactId>medicine-stock</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
-	<name>Hello world Spring - by Institut Marianao</name>
+	<name>Medicine Stocks - by Institut Marianao</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
-		<spring.version>6.1.1</spring.version>
-		<spring-security>6.2.0</spring-security>
 		<jakarta.jakartaee-web-api>10.0.0</jakarta.jakartaee-web-api>
 		<jakarta.servlet.jsp.jstl>3.0.0</jakarta.servlet.jsp.jstl>
+		<spring.version>6.1.1</spring.version>
+		<spring-security>6.2.0</spring-security>
+		<hibernate-validator>8.0.0.Final</hibernate-validator>
 	</properties>
 
 	<dependencies>
-		<!-- Spring web MVC -->
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.version}</version>
-		</dependency>
-		<!-- J2EE implementation -->
+		<!-- Jakarta J2EE implementation -->
 		<dependency>
 			<groupId>jakarta.platform</groupId>
 			<artifactId>jakarta.jakartaee-web-api</artifactId>
 			<version>${jakarta.jakartaee-web-api}</version>
 			<scope>provided</scope>
 		</dependency>
+		<!-- Jakarta JSTL -->
 		<dependency>
 			<groupId>org.glassfish.web</groupId>
 			<artifactId>jakarta.servlet.jsp.jstl</artifactId>
 			<version>${jakarta.servlet.jsp.jstl}</version>
 		</dependency>
+		<!-- Spring web MVC -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<!-- Spring Security -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
 			<version>${spring-security}</version>
-			<!--
-            <exclusions>
-                <exclusion>
-                    <artifactId>spring-asm</artifactId>
-                    <groupId>org.springframework</groupId>
-                </exclusion>
-            </exclusions>
-            -->
 		</dependency>
+		<!-- Spring security web -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
 			<version>${spring-security}</version>
 		</dependency>
+		<!-- Spring security taglibs -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-taglibs</artifactId>
 			<version>${spring-security}</version>
+		</dependency>
+		<!-- Hibernate validator -->
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate-validator}</version>
 		</dependency>
 	</dependencies>
 

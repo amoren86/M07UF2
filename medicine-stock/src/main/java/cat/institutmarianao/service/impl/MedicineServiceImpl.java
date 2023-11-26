@@ -17,7 +17,7 @@ public class MedicineServiceImpl implements MedicineService {
 	private MedicineRepository medicineRepository;
 
 	@Override
-	public List<Medicine> getAllMedicines() {
+	public Set<Medicine> getAllMedicines() {
 		return medicineRepository.getAllMedicines();
 	}
 
@@ -27,7 +27,7 @@ public class MedicineServiceImpl implements MedicineService {
 	}
 
 	@Override
-	public List<Medicine> getMedicinesByCategory(String category) {
+	public Set<Medicine> getMedicinesByCategory(String category) {
 		return medicineRepository.getMedicinesByCategory(category);
 	}
 

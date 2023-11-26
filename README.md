@@ -20,5 +20,8 @@
 	<tr>
 		<td>Spring Security</td><td>6.2.0</td><td>https://docs.spring.io/spring-security/reference/index.html</td>
 	</tr>
+	<tr>
+		<td>Hibernate Validator</td><td>8.0.0.Final</td><td>https://hibernate.org/validator/releases/8.0/</td>
+	</tr>
 </table>
 Tested on Apache Tomcat/10.1.16 (https://tomcat.apache.org/download-10.cgi)
