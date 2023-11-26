@@ -8,7 +8,7 @@
 	<artifactId>medicine-stock</artifactId>
 	<packaging>war</packaging>
 	<version>1.0</version>
-	<name>Hello world Spring - by Institut Marianao</name>
+	<name>Medicine Stocks - by Institut Marianao</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

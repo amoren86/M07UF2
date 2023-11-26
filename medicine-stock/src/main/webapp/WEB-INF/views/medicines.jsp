@@ -17,7 +17,7 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 	<div class="container">
 		<header class="mt-4 p-5 bg-light bg-gradient rounded">
-			<h1>Medicines</h1>
+			<h1>Medicine Stock</h1>
 			<p>List of medicines in stock</p>
 		</header>
 		<div class="row">
@@ -31,7 +31,7 @@
 							<p class="card-text">${medicine.description}</p>
 							<p class="card-text">${medicine.price}€</p>
 							<p class="card-text">There is ${medicine.stockQuantity} units in stock</p>
-							<a class="card-link"
+							<a class="btn btn-secondary"
 								href="<spring:url value="/medicines/medicine?codi=${medicine.medicineId}" />">Details</a>
 						</div>
 					</div>
