@@ -12,7 +12,14 @@
 
 
 	<mvc:annotation-driven
-		enable-matrix-variables="true" />
+		enable-matrix-variables="true">
+		<mvc:path-matching path-helper="pathHelper" />
+	</mvc:annotation-driven>
+
+	<bean id="pathHelper"
+		class="org.springframework.web.util.UrlPathHelper">
+		<property name="removeSemicolonContent" value="false" />
+	</bean>
 
 	<context:component-scan
 		base-package="cat.institutmarianao.controller cat.institutmarianao.repository cat.institutmarianao.service" />
