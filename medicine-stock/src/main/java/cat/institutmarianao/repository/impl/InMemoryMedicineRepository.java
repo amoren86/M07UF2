@@ -1,5 +1,6 @@
 package cat.institutmarianao.repository.impl;
 
+import java.time.temporal.ValueRange;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -17,7 +18,7 @@ public class InMemoryMedicineRepository implements MedicineRepository {
 	public InMemoryMedicineRepository() {
 		Medicine ibuprofe = new Medicine("M010", "Ibuprofé", 2);
 		ibuprofe.setDescription("Ibuprofé de 600mg");
-		ibuprofe.setCategory("Anti−inflamatori");
+		ibuprofe.setCategory("Anti-inflamatori");
 		ibuprofe.setProducer("Cinfa");
 		ibuprofe.setStockQuantity(214);
 
@@ -70,29 +71,32 @@ public class InMemoryMedicineRepository implements MedicineRepository {
 
 	@Override
 	public Set<Medicine> getMedicinesByFilter(Map<String, List<String>> filterParams) {
-		Set<Medicine> medicinesByProducer = new HashSet<>();
-		Set<Medicine> medicinesInStockRange = new HashSet<>();
+		Set<Medicine> filteredMedicines = new HashSet<>();
 
 		Set<String> criterias = filterParams.keySet();
 
+		long minStock = Long.parseLong(filterParams.get("stock").get(0));
+		long maxStock = Long.parseLong(filterParams.get("stock").get(1));
+
+		ValueRange stockRange = ValueRange.of(minStock, maxStock);
+
 		for (Medicine medicine : medicines) {
+			boolean passFilter = true;
+
 			if (criterias.contains("producer")) {
-				for (String producerName : filterParams.get("producer")) {
-					if (producerName.equalsIgnoreCase(medicine.getProducer())) {
-						medicinesByProducer.add(medicine);
-					}
-				}
+				passFilter = filterParams.get("producer").contains(medicine.getProducer());
 			}
+
 			if (criterias.contains("stock")) {
-				long minStock = Long.parseLong(filterParams.get("stock").get(0));
-				long maxStock = Long.parseLong(filterParams.get("stock").get(1));
-				if ((medicine.getStockQuantity() >= minStock) && (medicine.getStockQuantity() <= maxStock)) {
-					medicinesInStockRange.add(medicine);
-				}
+				passFilter = passFilter && stockRange.isValidValue(medicine.getStockQuantity());
+			}
+
+			if (passFilter) {
+				filteredMedicines.add(medicine);
 			}
 		}
-		medicinesInStockRange.retainAll(medicinesByProducer);
-		return medicinesInStockRange;
+
+		return filteredMedicines;
 	}
 
 	@Override
