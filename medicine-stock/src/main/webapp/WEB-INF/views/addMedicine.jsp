@@ -35,35 +35,30 @@
 			<form:form modelAttribute="newMedicine" class="row g-3">
 
 				<div class="col-auto">
-					<label class="form-label" for="medicineId"> <spring:message
-							code="addMedicament.form.medicamentId.label" />
+					<label class="form-label" for="medicineId"> Medicine ID
 					</label>
 					<form:input id="medicineId" path="medicineId" type="text"
 						class="form-control" />
 				</div>
 				<div class="col-auto">
-					<label class="form-label" for="name"> <spring:message
-							code="addMedicament.form.name.label" />
+					<label class="form-label" for="name"> Name
 					</label>
 					<form:input id="name" path="name" type="text" class="form-control" />
 				</div>
 				<div class="col-auto">
-					<label class="form-label" for="price"> <spring:message
-							code="addMedicament.form.price.label" />
+					<label class="form-label" for="price"> Price
 					</label>
 					<form:input id="price" path="price" type="number" min="0.00"
 						max="10000.00" step="0.01" class="form-control" />
 				</div>
 				<div class="col-auto">
-					<label class="form-label" for="producer"> <spring:message
-							code="addMedicament.form.producer.label" />
+					<label class="form-label" for="producer"> Producer
 					</label>
 					<form:input id="producer" path="producer" type="text"
 						class="form-control" />
 				</div>
 				<div class="col-auto">
-					<label class="form-label" for="category"> <spring:message
-							code="addMedicament.form.category.label" />
+					<label class="form-label" for="category"> Category
 					</label>
 					<form:input id="category" path="category" type="text"
 						class="form-control" />
