@@ -20,22 +20,24 @@
 			<h1>Medicine Stock</h1>
 			<p>Medicine detail</p>
 		</header>
-		<h3>${medicine.name}</h3>
-		<h5>${medicine.description}</h5>
-		<dl class="row g-1">
-			<dt class="col-sm-2">Code:</dt>
-			<dd class="col-sm-10">${medicine.medicineId}</dd>
-			<dt class="col-sm-2">Lab:</dt>
-			<dd class="col-sm-10">${medicine.producer}</dd>
-			<dt class="col-sm-2">Category:</dt>
-			<dd class="col-sm-10">${medicine.category}</dd>
-			<dt class="col-sm-2">Stock:</dt>
-			<dd class="col-sm-10">${medicine.stockQuantity}</dd>
-			<dt class="col-sm-2">Price:</dt>
-			<dd class="col-sm-10">${medicine.price}€</dd>
-		</dl>
-		<a href="<spring:url value="/medicines/all" />" class="btn btn-secondary">
-			go back </a>
+		<div class="row p-3 g-2">
+			<h3>${medicine.name}</h3>
+			<h5>${medicine.description}</h5>
+			<dl class="row g-1">
+				<dt class="col-sm-2">Code:</dt>
+				<dd class="col-sm-10">${medicine.medicineId}</dd>
+				<dt class="col-sm-2">Lab:</dt>
+				<dd class="col-sm-10">${medicine.producer}</dd>
+				<dt class="col-sm-2">Category:</dt>
+				<dd class="col-sm-10">${medicine.category}</dd>
+				<dt class="col-sm-2">Stock:</dt>
+				<dd class="col-sm-10">${medicine.stockQuantity}</dd>
+				<dt class="col-sm-2">Price:</dt>
+				<dd class="col-sm-10">${medicine.price}€</dd>
+			</dl>
+			<a href="<spring:url value="/medicines/all" />"
+				class="col-1 btn btn-secondary"> go back </a>
+		</div>
 	</div>
 </body>
 </html>
