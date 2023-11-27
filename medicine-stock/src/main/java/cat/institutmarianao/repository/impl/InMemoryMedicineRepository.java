@@ -17,7 +17,7 @@ public class InMemoryMedicineRepository implements MedicineRepository {
 	public InMemoryMedicineRepository() {
 		Medicine ibuprofe = new Medicine("M010", "Ibuprofé", 2);
 		ibuprofe.setDescription("Ibuprofé de 600mg");
-		ibuprofe.setCategory("Anti−inflamatori");
+		ibuprofe.setCategory("Anti-inflamatori");
 		ibuprofe.setProducer("Cinfa");
 		ibuprofe.setStockQuantity(214);
 

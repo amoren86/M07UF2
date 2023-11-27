@@ -31,8 +31,6 @@
 							<p class="card-text">${medicine.description}</p>
 							<p class="card-text">${medicine.price}€</p>
 							<p class="card-text">There is ${medicine.stockQuantity} units in stock</p>
-							<a class="btn btn-secondary"
-								href="<spring:url value="/medicines/medicine?codi=${medicine.medicineId}" />">Details</a>
 						</div>
 					</div>
 				</div>
