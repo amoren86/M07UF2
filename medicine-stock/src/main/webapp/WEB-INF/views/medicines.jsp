@@ -21,22 +21,21 @@
 			<p>List of medicines in stock</p>
 		</header>
 		<div class="row">
-			<c:forEach items="${medicines}" var="medicine">
-				<div class="col-sm-6 col-md-3 my-5">
-					<div class="card">
-						<div class="card-header">
-							<h5>${medicine.name}</h5>
-						</div>
-						<div class="card-body">
-							<p class="card-text">${medicine.description}</p>
-							<p class="card-text">${medicine.price}€</p>
-							<p class="card-text">There is ${medicine.stockQuantity} units in stock</p>
-							<a class="btn btn-secondary"
-								href="<spring:url value="/medicines/medicine?codi=${medicine.medicineId}" />">Details</a>
-						</div>
+			<div class="col-sm-6 col-md-3 my-5">
+				<div class="card">
+					<div class="card-header">
+						<h5>${medicine.name}</h5>
+					</div>
+					<div class="card-body">
+						<p class="card-text">${medicine.description}</p>
+						<p class="card-text">${medicine.price}€</p>
+						<p class="card-text">There is ${medicine.stockQuantity} units
+							in stock</p>
+						<a class="btn btn-secondary"
+							href="<spring:url value="/medicines/medicine?codi=${medicine.medicineId}" />">Details</a>
 					</div>
 				</div>
-			</c:forEach>
+			</div>
 		</div>
 	</div>
 </body>
