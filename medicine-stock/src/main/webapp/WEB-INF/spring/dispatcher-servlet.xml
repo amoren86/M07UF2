@@ -11,38 +11,14 @@
  http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
 
-	<mvc:annotation-driven
-		enable-matrix-variables="true">
-		<mvc:path-matching path-helper="pathHelper" />
-	</mvc:annotation-driven>
-
-	<bean id="pathHelper"
-		class="org.springframework.web.util.UrlPathHelper">
-		<property name="removeSemicolonContent" value="false" />
-	</bean>
+	<mvc:annotation-driven/>
 
 	<context:component-scan
-		base-package="cat.institutmarianao.controller cat.institutmarianao.repository cat.institutmarianao.service" />
+		base-package="cat.institutmarianao.controller cat.institutmarianao.repository" />
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	<bean id="messageSource"
-		class="org.springframework.context.support.ResourceBundleMessageSource">
-		<property name="basename" value="messages" />
-	</bean>
-
-	<bean id="localeResolver"
-		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
-		<property name="defaultLocale" value="ca" />
-	</bean>
-
-	<mvc:interceptors>
-		<bean
-			class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
-			<property name="paramName" value="language" />
-		</bean>
-	</mvc:interceptors>
 </beans>
