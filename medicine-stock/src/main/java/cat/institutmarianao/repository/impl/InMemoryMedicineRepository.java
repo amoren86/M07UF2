@@ -87,8 +87,8 @@ public class InMemoryMedicineRepository implements MedicineRepository {
 				passFilter = filterParams.get("producer").contains(medicine.getProducer());
 			}
 
-			if (criterias.contains("stock")) {
-				passFilter = passFilter && stockRange.isValidValue(medicine.getStockQuantity());
+			if (passFilter && criterias.contains("stock")) {
+				passFilter = stockRange.isValidValue(medicine.getStockQuantity());
 			}
 
 			if (passFilter) {
