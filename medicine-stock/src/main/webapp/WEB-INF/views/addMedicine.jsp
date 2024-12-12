@@ -36,34 +36,34 @@
 
 				<div class="col-auto">
 					<label class="form-label" for="medicineId"> <spring:message
-							code="addMedicament.form.medicamentId.label" />
+							code="addMedicine.form.medicamentId.label" />
 					</label>
 					<form:input id="medicineId" path="medicineId" type="text"
 						class="form-control" />
 				</div>
 				<div class="col-auto">
 					<label class="form-label" for="name"> <spring:message
-							code="addMedicament.form.name.label" />
+							code="addMedicine.form.name.label" />
 					</label>
 					<form:input id="name" path="name" type="text" class="form-control" />
 				</div>
 				<div class="col-auto">
 					<label class="form-label" for="price"> <spring:message
-							code="addMedicament.form.price.label" />
+							code="addMedicine.form.price.label" />
 					</label>
 					<form:input id="price" path="price" type="number" min="0.00"
 						max="10000.00" step="0.01" class="form-control" />
 				</div>
 				<div class="col-auto">
 					<label class="form-label" for="producer"> <spring:message
-							code="addMedicament.form.producer.label" />
+							code="addMedicine.form.producer.label" />
 					</label>
 					<form:input id="producer" path="producer" type="text"
 						class="form-control" />
 				</div>
 				<div class="col-auto">
 					<label class="form-label" for="category"> <spring:message
-							code="addMedicament.form.category.label" />
+							code="addMedicine.form.category.label" />
 					</label>
 					<form:input id="category" path="category" type="text"
 						class="form-control" />
