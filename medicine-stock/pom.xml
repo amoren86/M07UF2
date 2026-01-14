@@ -16,7 +16,7 @@
 		<maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
 		<jakarta.jakartaee-web-api>10.0.0</jakarta.jakartaee-web-api>
 		<jakarta.servlet.jsp.jstl>3.0.0</jakarta.servlet.jsp.jstl>
-		<spring.version>6.1.1</spring.version>
+		<spring.version>7.0.2</spring.version>
 		<spring-security>6.2.0</spring-security>
 		<hibernate-validator>8.0.0.Final</hibernate-validator>
 	</properties>
