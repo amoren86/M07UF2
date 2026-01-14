@@ -81,17 +81,18 @@ public class InMemoryMedicineRepository implements MedicineRepository {
 		ValueRange stockRange = ValueRange.of(minStock, maxStock);
 
 		for (Medicine medicine : medicines) {
-			boolean passFilter = true;
+			boolean passProducerFilter = true;
+			boolean passStockFilter = true;
 
 			if (criterias.contains("producer")) {
-				passFilter = filterParams.get("producer").contains(medicine.getProducer());
+				passProducerFilter = filterParams.get("producer").contains(medicine.getProducer());
 			}
 
 			if (criterias.contains("stock")) {
-				passFilter = passFilter && stockRange.isValidValue(medicine.getStockQuantity());
+				passStockFilter = stockRange.isValidValue(medicine.getStockQuantity());
 			}
 
-			if (passFilter) {
+			if (passProducerFilter && passStockFilter) {
 				filteredMedicines.add(medicine);
 			}
 		}
