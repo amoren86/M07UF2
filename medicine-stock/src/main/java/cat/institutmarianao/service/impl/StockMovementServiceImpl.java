@@ -14,9 +14,9 @@ public class StockMovementServiceImpl implements StockMovementService {
 	private MedicineRepository medicineRepository;
 
 	@Override
-	public void processStockMovement(String medicineId, long quantity, int signe) {
+	public void processStockMovement(String medicineId, long quantity, int sign) {
 		Medicine medicineById = medicineRepository.getMedicineById(medicineId);
-		long signedQuantity = quantity * signe;
+		long signedQuantity = quantity * sign;
 		if ((medicineById.getStockQuantity() + signedQuantity) < 0) {
 			throw new IllegalArgumentException(
 					"There is not enough units. The stock quantity is: " + medicineById.getStockQuantity());
