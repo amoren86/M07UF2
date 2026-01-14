@@ -1,1 +1,6 @@
-
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="xmlns.jcp.org"
+       xmlns:xsi="www.w3.org"
+       xsi:schemaLocation="xmlns.jcp.org
+                           xmlns.jcp.org/beans_1_1.xsd">
+</beans>
