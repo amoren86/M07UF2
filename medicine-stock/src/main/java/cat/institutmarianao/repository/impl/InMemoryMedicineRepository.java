@@ -73,7 +73,7 @@ public class InMemoryMedicineRepository implements MedicineRepository {
 	public Set<Medicine> getMedicinesByFilter(Map<String, List<String>> filterParams) {
 		Set<Medicine> filteredMedicines = new HashSet<>();
 
-		Set<String> criterias = filterParams.keySet();
+		Set<String> criteria = filterParams.keySet();
 
 		long minStock = Long.parseLong(filterParams.get("stock").get(0));
 		long maxStock = Long.parseLong(filterParams.get("stock").get(1));
@@ -81,18 +81,17 @@ public class InMemoryMedicineRepository implements MedicineRepository {
 		ValueRange stockRange = ValueRange.of(minStock, maxStock);
 
 		for (Medicine medicine : medicines) {
-			boolean passProducerFilter =true;
-			boolean passStockFilter =true;
+			boolean passFilter = true;
 
-			if (criterias.contains("producer")) {
-				passProducerFilter = filterParams.get("producer").contains(medicine.getProducer());
+			if (criteria.contains("producer")) {
+				passFilter = filterParams.get("producer").contains(medicine.getProducer());
 			}
 
-			if ( criterias.contains("stock")) {
-				passStockFilter = stockRange.isValidValue(medicine.getStockQuantity());
+			if (criteria.contains("stock")) {
+				passFilter = passFilter && stockRange.isValidValue(medicine.getStockQuantity());
 			}
 
-			if (passProducerFilter && passStockFilter) {
+			if (passFilter) {
 				filteredMedicines.add(medicine);
 			}
 		}
